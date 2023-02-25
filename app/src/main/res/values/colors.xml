@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#1DB954</color>
+    <color name="input_text">#B3B3B3</color>
+    <color name="dark_grey">#282828</color>
+    <color name="darkest_grey">#121212</color>
+    <color name="green_brand">#57B65F</color>
+    <color name="fb_color">#3c5793</color>
+    <color name="lightGreen">#e5ffcc</color>
+</resources>

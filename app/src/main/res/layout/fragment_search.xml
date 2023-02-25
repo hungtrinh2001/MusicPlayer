@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <iammert.com.view.scalinglib.ScalingLayout
+        android:id="@+id/scalingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_behavior="iammert.com.view.scalinglib.ScalingLayoutBehavior"
+        app:radiusFactor="0.2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/dark_grey">
+
+            <RelativeLayout
+                android:id="@+id/searchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:visibility="invisible">
+
+                <ImageButton
+                    android:id="@+id/search_text_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/search"
+                    android:contentDescription="Search Button" />
+
+                <EditText
+                    android:id="@+id/editTextSearch"
+                    android:layout_width="215dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_toEndOf="@+id/search_text_button"
+                    android:layout_toRightOf="@+id/search_text_button"
+                    android:hint="@string/enter_search"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="#ffffff"
+                    android:textColorHighlight="@color/green"
+                    android:textColorLink="@color/green_brand" />
+
+                <ImageButton
+                    android:id="@+id/deleteEditText"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_toEndOf="@+id/editTextSearch"
+                    android:layout_toRightOf="@+id/editTextSearch"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/delete_entry" />
+
+                <ImageButton
+                    android:id="@+id/voiceSearch"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_toEndOf="@+id/deleteEditText"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/mic_fill" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textViewSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:hint="Search"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </iammert.com.view.scalinglib.ScalingLayout>
+
+    <LinearLayout
+        android:id="@+id/categoriesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonSongs"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="0dp"
+            android:layout_toEndOf="@+id/editTextSearch"
+            android:layout_toRightOf="@+id/categoriesLayout"
+
+            android:layout_weight="1"
+            android:background="@drawable/button_layout"
+            android:text="Songs"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/buttonVideos"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="0dp"
+            android:layout_toRightOf="@+id/buttonSongs"
+            android:layout_weight="1"
+            android:background="@drawable/button_layout"
+            android:text="Videos"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/buttonPlaylists"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_toEndOf="@+id/categoriesLayout"
+            android:layout_toRightOf="@+id/buttonVideos"
+            android:layout_weight="1"
+            android:background="@drawable/button_layout"
+            android:text="Playlists"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/deleteSearches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:text="Delete all search results" />
+
+    <TextView
+        android:id="@+id/searchType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gotham_bold"
+        android:gravity="center_horizontal"
+        android:padding="15dp"
+        android:text="Search from ZingMP3"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Artist_search_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
